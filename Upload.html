@@ -47,15 +47,16 @@
       <h1>Upload <small>Insira o .csv</small></h1>
     </div>
     <div class="container" >
-      <input type="file" id="file" class="file" data-allowed-file-extensions='["csv"]' data-show-preview="false " />
+      <input type="file" id="file" class="file" data-allowed-file-extensions='["csv"]' accept=".csv" data-show-preview="false" />
       {{check1}}
       <hr />
       {{radio1}}
       <hr />
       {{radio2}}
-      <hr />
-    {{ table }}
     </div>
+    <div class="container">
+      {{ table }}
+      </div>
     <footer>
       <p>
         &copy; 2016 - 50%
@@ -76,7 +77,7 @@
             language: "pt-BR ",
             showUpload: false,
             showRemove: false,
-            mainClass: "input-group-sm "
+            mainClass: "input-group-sm"
         });
   </script>
   <!-- Fim Scripts -->
