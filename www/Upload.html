@@ -1,0 +1,69 @@
+<html>
+
+<head>
+  <title>50% - Upload</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="css/fileinput.css" />
+</head>
+
+<body>
+  <!-- Inicio Navbar -->
+  <div class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+        <a href="#" class="navbar-brand">50%</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li class="active">
+            <a href="#">Upload</a>
+          </li>
+          <li>
+            <a href="#">lol2</a>
+          </li>
+          <li>
+            <a href="#">lol3</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Fim Navbar -->
+  <!-- Começo conteudo -->
+  <div class="container">
+    <label for="file-1">Upload .csv:</label>
+    <input type="file" id="file-1" class="file-loading file-caption-disabled" data-allowed-file-extensions='["csv", "txt"]' />
+    <hr />
+    <footer>
+      <p>
+        &copy; 2016 - 50%
+        <a href="#" class="btn btn-default pull-right">
+          <span class="glyphicon glyphicon glyphicon-chevron-up" aria-hidden="true"></span> Voltar ao Topo
+        </a>
+      </p>
+    </footer>
+  </div>
+  <!-- Scripts -->
+  <script src="js/jquery-1.10.2.min.js"></script>
+  <script src="js/fileinput.js"></script>
+  <script src="js/fileinput.min.js"></script>
+  <script src="js/locales/pt-BR.js"></script>
+  <script>
+    $("#file-1").fileinput({
+            language: "pt-BR",
+            showCaption: false,
+            mainClass: "input-group-sm"
+        });
+  </script>
+  <!-- Fim Scripts -->
+</body>
+
+</html>
