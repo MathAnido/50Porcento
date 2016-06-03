@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>50% - Upload</title>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="css/fileinput.css" />
@@ -42,8 +43,9 @@
   <!-- Fim Navbar -->
   <!-- Começo conteudo -->
   <div class="container">
-    <h1> Upload </h1>
-    <label for="file-1">Upload .csv:</label>
+    <div class="page-header">
+      <h1>Upload <small>Insira o .csv</small></h1>
+    </div>
     <input type="file" id="file-1" class="file-loading file-caption-disabled" data-allowed-file-extensions='["csv"]' />
     <hr />
     <footer>
@@ -57,6 +59,7 @@
   </div>
   <!-- Scripts -->
   <script src="js/jquery-1.10.2.min.js"></script>
+  <script src="js/bootstrap.js" ></script>
   <script src="js/fileinput.js"></script>
   <script src="js/fileinput.min.js"></script>
   <script src="js/locales/pt-BR.js"></script>
