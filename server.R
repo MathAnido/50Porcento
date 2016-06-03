@@ -10,18 +10,12 @@
       # column will contain the local filenames where the data can
       # be found.
       
-      inFile <- input$file1
+      inFile <- input$file
       
       if (is.null(inFile))
         return(NULL)
       
       read.csv(inFile$datapath, header = input$header,
                sep = input$sep, quote = input$quote)
-    })
-    
-    output$plot3 <- renderPlot({
-      x <- c(1,2,3,4,5)
-      y <- c(5,4,3,2,1)
-      plot(x,y)
     })
   })
