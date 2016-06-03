@@ -10,7 +10,7 @@
       # column will contain the local filenames where the data can
       # be found.
       
-      inFile <- input$file
+      inFile <- input$file1
       
       if (is.null(inFile))
         return(NULL)
@@ -19,7 +19,7 @@
                sep = input$sep, quote = input$quote)
     })
     output$plot1 <- renderPlot({
-      inFile <- input$file
+      inFile <- input$file1
       
       if (is.null(inFile))
         return(NULL)
@@ -27,5 +27,14 @@
       x <- read.csv(inFile$datapath, header = input$header,
                     sep = input$sep, quote = input$quote)
       plot(x$hp,x$cyl)
+    })
+    output$caption <- renderText({
+      inFile <- input$file1
+      if(is.null(inFile)){
+        print("Você deve selecionar um arquivo")
+      }
+      else
+        return(NULL)
+        
     })
   })

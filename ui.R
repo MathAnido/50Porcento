@@ -1,7 +1,8 @@
 htmlTemplate("Upload.html",
-             check1 = checkboxInput('header', 'Header', TRUE),
-             radio1 = radioButtons('sep', 'Separator',c(Comma=',',Semicolon=';',Tab='\t'),','),
-             radio2 = radioButtons('quote', 'Quote',c(None='','Double Quote'='"','Single Quote'="'"),'"'),
+             check1 = checkboxInput('header', 'Cabeçalho', TRUE),
+             radio1 = radioButtons('sep', 'Separador',c(Virgula=',','Ponto e Virgula'=';',Tab='\t'),','),
+             radio2 = radioButtons('quote', 'Quote',c(Nenhum='','Aspas Duplas'='"','Aspas Simples'="'"),'"'),
              table = dataTableOutput('contents'),
-             graph1 = plotOutput('plot1')
+             graph1 = plotOutput('plot1'),
+             mensagem = textOutput("caption")
 )
