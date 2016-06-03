@@ -15,7 +15,17 @@
       if (is.null(inFile))
         return(NULL)
       
-      read.csv(inFile$datapath, header = input$header,
+      x <- read.csv(inFile$datapath, header = input$header,
                sep = input$sep, quote = input$quote)
+    })
+    output$plot1 <- renderPlot({
+      inFile <- input$file
+      
+      if (is.null(inFile))
+        return(NULL)
+      
+      x <- read.csv(inFile$datapath, header = input$header,
+                    sep = input$sep, quote = input$quote)
+      plot(x$hp,x$cyl)
     })
   })

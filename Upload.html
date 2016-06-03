@@ -7,10 +7,7 @@
   <title>50% - Upload</title>
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="/css/fileinput.css" />
-  <link rel="stylesheet" type="text/css" href="/css/style.css" />
-  <script src="/shared/jquery.js" type="text/javascript"></script>
-  <script src="/shared/shiny.js" type="text/javascript"></script>
-  <link rel="stylesheet" type="text/css" href="/shared/shiny.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" /> {{ headContent() }}
 </head>
 
 <body>
@@ -51,66 +48,15 @@
     </div>
     <div class="well">
       <input type="file" id="file" class="file" data-allowed-file-extensions='["csv"]' accept=".csv" data-show-preview="false"
-      />
-      <div class="form-group shiny-input-container">
-        <div class="checkbox">
-          <label>
-      <input id="header" type="checkbox" checked="checked" class="shiny-bound-input">
-      <span>Cabeçalho</span>
-    </label>
-        </div>
-      </div>
-      <hr />
-      <div id="sep" class="form-group shiny-input-radiogroup shiny-input-container shiny-bound-input">
-        <label class="control-label" for="sep">Separador</label>
-        <div class="shiny-options-group">
-          <div class="radio">
-            <label>
-        <input type="radio" name="sep" value="," checked="checked">
-        <span>Virgula</span>
-      </label>
-          </div>
-          <div class="radio">
-            <label>
-        <input type="radio" name="sep" value=";">
-        <span>Ponto e Virgula</span>
-      </label>
-          </div>
-          <div class="radio">
-            <label>
-        <input type="radio" name="sep" value="	">
-        <span>Tab</span>
-      </label>
-          </div>
-        </div>
-      </div>
-      <hr />
-      <div id="quote" class="form-group shiny-input-radiogroup shiny-input-container shiny-bound-input">
-        <label class="control-label" for="quote">Citação</label>
-        <div class="shiny-options-group">
-          <div class="radio">
-            <label>
-        <input type="radio" name="quote" value="">
-        <span>Nenhum</span>
-      </label>
-          </div>
-          <div class="radio">
-            <label>
-        <input type="radio" name="quote" value="&quot;" checked="checked">
-        <span>Aspas Duplas</span>
-      </label>
-          </div>
-          <div class="radio">
-            <label>
-        <input type="radio" name="quote" value="'">
-        <span>Aspas Simples</span>
-      </label>
-          </div>
-        </div>
-      </div>
+      /> {{check1}}
+      <hr /> {{radio1}}
+      <hr /> {{radio2}}
     </div>
     <div class="container">
-      <div id="contents" class="shiny-datatable-output shiny-bound-output"></div>
+      {{ table }}
+    </div>
+    <div>
+      {{ graph1 }}
     </div>
   </div>
   <div class="navbar navbar-fixed-bottom">
