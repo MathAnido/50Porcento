@@ -42,33 +42,35 @@
   </div>
   <!-- Fim Navbar -->
   <!-- Começo conteudo -->
-  <div class="container">
-    <div class="title">
-      <h1>Upload <small>Insira o .csv</small></h1>
-      <hr />
+    <div class="container">
+      <div class="title">
+        <h1>Upload <small>Insira o .csv</small></h1>
+        <hr />
+      </div>
+      <div class="well">
+        <input type="file" id="file1" class="file" data-allowed-file-extensions='["csv"]' accept=".csv" data-show-preview="false"
+        /> {{check1}}
+        <hr /> {{radio1}}
+        <hr /> {{radio2}}
+      </div>
     </div>
-    <div class="well">
-      <input type="file" id="file1" class="file" data-allowed-file-extensions='["csv"]' accept=".csv" data-show-preview="false"
-      /> {{check1}}
-      <hr /> {{radio1}}
-      <hr /> {{radio2}}
+    <div class="container">
+      <div class="title">
+        <h1>CSV <small>Pré Visualização</small></h1>
+        <hr />
+      </div>
+      <div class="well">
+        {{ mensagem }} {{ preVisualizacao }}
+      </div>
     </div>
-  </div>
-  <div class="container">
-    <div class="title">
-      <h1>CSV <small>Pré Visualização</small></h1>
-      <hr />
-    </div>
-    <div class="well">
-      {{ mensagem }} {{ table }}
-    </div>
-  </div>
   {{select1}}
   <div class="navbar navbar-fixed-bottom">
     <a href="# " class="btn btn-default pull-right btnSubir">
       <span class="glyphicon glyphicon-chevron-up " aria-hidden="true "></span> Voltar ao Topo
     </a>
   </div>
+  <!-- Fim Conteudo -->
+  <!-- Inicio Rodape -->
   <footer class="rodape">
     <div class="container">
       <p>

@@ -3,41 +3,24 @@
   options(shiny.maxRequestSize = 9*1024^2)
   
   shinyServer(function(input, output, session) {
-    output$contents <- renderDataTable({
-      # input$file1 will be NULL initially. After the user selects
-      # and uploads a file, it will be a data frame with 'name',
-      # 'size', 'type', and 'datapath' columns. The 'datapath'
-      # column will contain the local filenames where the data can
-      # be found.
-      
-      inFile <- input$file1
-      
-      if (is.null(inFile))
+    csv <- reactive({
+      inFile<-input$file1
+      if(is.null(inFile))
         return(NULL)
-      
-      read.csv(inFile$datapath, header = input$header,
-               sep = input$sep, quote = input$quote)
-    })
-    output$caption <- renderText({
-      inFile <- input$file1
-      if(is.null(inFile)){
-        print("Você deve selecionar um arquivo")
-      }
-      else
-        return(NULL)
-        
-    })
-    KPI <- reactive({
-      KPIFile<-input$file1
-      
-      if(is.null(KPIFile))
-        return(NULL)
-      
-      read.csv(KPIFile$datapath, header=input$header, sep=input$sep, 
+      read.csv(inFile$datapath, header=input$header, sep=input$sep, 
                quote=input$quote)
-     
+    })
+    output$preVisu <- renderDataTable({
+      if (is.null(csv()))
+        return(NULL)
+      else return(csv())
+    })
+    output$msg <- renderText({
+      if(is.null(csv()))
+        return("Você deve selecionar um arquivo")
+      else return(NULL)
     })
     observe({
-      updateSelectInput(session,"selecao", choices = KPI())
+      updateSelectInput(session,"selecao", choices = csv())
     })
   })
