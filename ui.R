@@ -4,5 +4,7 @@ htmlTemplate("Upload.html",
              radio2 = radioButtons('quote', 'Quote',c(Nenhum='','Aspas Duplas'='"','Aspas Simples'="'"),'"'),
              preVisualizacao = dataTableOutput('preVisu'),
              mensagem = textOutput("msg"),
-             select1 = selectInput("selecao","Jose",choices = NULL)
+             select1 = selectInput("selecao","Jose",choices = NULL),
+             select2 = selectInput("selecao2","Jose 2",choices=NULL),
+             graph1 = plotOutput('graph1')
 )
