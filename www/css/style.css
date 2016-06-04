@@ -15,6 +15,11 @@ textarea {
     max-width: 280px;
 }
 
+.navbar-inverse{
+    background-color: rgba(0,0,0,.8);
+    box-shadow: 0 0 10px rgba(0,0,0,.8) inset;
+}
+
 .rodape{
     background-color: rgba(0,0,0,.8);
     box-shadow: 0 0 10px rgba(0,0,0,.8) inset;
