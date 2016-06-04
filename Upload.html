@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
@@ -10,11 +10,10 @@
   <link rel="stylesheet" type="text/css" href="/css/style.css" /> {{ headContent() }}
 </head>
 
-<body data-spy="scroll" data-target="#navbar1">
-  JOse Jose Jose
+<body>
   <!-- Inicio Navbar -->
   <div id="nav">
-    <div class="navbar navbar-inverse navbar-static-top" id="navbar1" role="banner">
+    <div class="navbar navbar-inverse navbar-fixed-top" id="navbar1">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -45,59 +44,27 @@
   </div>
   <!-- Fim Navbar -->
   <!-- Começo conteudo -->
-  <section id="home" class="section">
-    <div class="container">
-      <div class="title">
-        <h1>50% <small>O que é?</small></h1>
-        <hr />
-      </div>
-      <p>
-        50% é um aplicativo estatístico sem fins lucrativos, desenvolvido por estudantes de Bacharelado de Ciência e Tecnologia da
-        Universidade Federal de São Paulo (Unifesp). Nosso objetivo é levar para todas as pessoas, sejam elas amadoras ou
-        profissionais, para que conheçam e manuseiem essa belíssima área que é a Estatística.
-      </p>
+  <div class="container">
+    <div class="title">
+      <h1>Upload <small>Insira o .csv</small></h1>
+      <hr />
     </div>
-  </section>
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <section id="upload" class="section">
-    <div class="container">
-      <div class="title">
-        <h1>Upload <small>Insira o .csv</small></h1>
-        <hr />
-      </div>
-      <div class="well">
-        <input type="file" id="file1" class="file" data-allowed-file-extensions='["csv"]' accept=".csv" data-show-preview="false"
-        /> {{check1}}
-        <hr /> {{radio1}}
-        <hr /> {{radio2}}
-      </div>
+    <div class="well">
+      <input type="file" id="file1" class="file" data-allowed-file-extensions='["csv"]' accept=".csv" data-show-preview="false" /> {{check1}}
+      <hr /> {{radio1}}
+      <hr /> {{radio2}}
     </div>
-  </section>
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <section id="csv" class="section">
-    <div class="container">
-      <div class="title">
-        <h1>CSV <small>Pré Visualização</small></h1>
-        <hr />
-      </div>
-      <div class="container well">
-        {{ mensagem }} {{ table }}
-      </div>
-      <div class="container">
-        {{ graph1 }}
-      </div>
+  </div>
+  <div class="container">
+    <div class="title">
+      <h1>CSV <small>Pré Visualização</small></h1>
+      <hr />
     </div>
-  </section>
+    <div class="well">
+      {{ mensagem }} {{ table }}
+    </div>
+  </div>
+  {{select1}}
   <div class="navbar navbar-fixed-bottom">
     <a href="# " class="btn btn-default pull-right subir">
       <span class="glyphicon glyphicon-chevron-up " aria-hidden="true "></span> Voltar ao Topo

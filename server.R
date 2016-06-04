@@ -2,7 +2,7 @@
   # setting this option. Here we'll raise limit to 9MB.
   options(shiny.maxRequestSize = 9*1024^2)
   
-  shinyServer(function(input, output) {
+  shinyServer(function(input, output, session) {
     output$contents <- renderDataTable({
       # input$file1 will be NULL initially. After the user selects
       # and uploads a file, it will be a data frame with 'name',
@@ -15,18 +15,8 @@
       if (is.null(inFile))
         return(NULL)
       
-      x <- read.csv(inFile$datapath, header = input$header,
+      read.csv(inFile$datapath, header = input$header,
                sep = input$sep, quote = input$quote)
-    })
-    output$plot1 <- renderPlot({
-      inFile <- input$file1
-      
-      if (is.null(inFile))
-        return(NULL)
-      
-      x <- read.csv(inFile$datapath, header = input$header,
-                    sep = input$sep, quote = input$quote)
-      plot(x$hp,x$cyl)
     })
     output$caption <- renderText({
       inFile <- input$file1
@@ -36,5 +26,18 @@
       else
         return(NULL)
         
+    })
+    KPI <- reactive({
+      KPIFile<-input$file1
+      
+      if(is.null(KPIFile))
+        return(NULL)
+      
+      read.csv(KPIFile$datapath, header=input$header, sep=input$sep, 
+               quote=input$quote)
+     
+    })
+    observe({
+      updateSelectInput(session,"selecao", choices = KPI())
     })
   })

@@ -3,6 +3,6 @@ htmlTemplate("Upload.html",
              radio1 = radioButtons('sep', 'Separador',c(Virgula=',','Ponto e Virgula'=';',Tab='\t'),','),
              radio2 = radioButtons('quote', 'Quote',c(Nenhum='','Aspas Duplas'='"','Aspas Simples'="'"),'"'),
              table = dataTableOutput('contents'),
-             graph1 = plotOutput('plot1'),
-             mensagem = textOutput("caption")
+             mensagem = textOutput("caption"),
+             select1 = selectInput("selecao","Jose",choices = NULL)
 )
