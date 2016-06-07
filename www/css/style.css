@@ -19,6 +19,7 @@ textarea {
     background-color: rgba(0,0,0,.8);
     box-shadow: 0 0 10px rgba(0,0,0,.8) inset;
 }
+
 .logo{
     opacity: 0.8;
     filter: alpha(opacity=80); /* For IE8 and earlier */
@@ -44,6 +45,14 @@ textarea {
 
 .centered {
     text-align: center;
-    line-height: 28px;
-    margin-bottom: 25px;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover,
+a:focus {
+  color: #23527c;
+  text-decoration: underline;
 }
