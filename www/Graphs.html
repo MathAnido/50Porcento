@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="/css/font-awesome.css" />
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="shared/shiny.css" />
 </head>
 
 <body>
@@ -20,7 +21,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-        <a href="Index.html" class="navbar-brand"><img alt="brand" src="/images/logo.png" class="img-responsive logo"/></a>
+        <a href="Index.html" class="navbar-brand"><img alt="brand" src="/images/logo.png" class="img-responsive logo" /></a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
@@ -50,6 +51,8 @@
       <h1><i class="fa fa-bar-chart" aria-hidden="true"></i> Graphs <small>Selecione o gráfico a ser gerado</small></h1>
       <hr />
     </div>
+    <div id="msg2" class="shiny-text-output"></div>
+  </div>
   </div>
   <!-- Fim Conteudo -->
   <!-- Inicio Rodape -->
@@ -62,6 +65,7 @@
   <!-- Fim Rodape -->
   <!-- Scripts -->
   <script src="/js/jquery-1.10.2.min.js "></script>
+  <script src="shared/shiny.js" type="text/javascript"></script>
   <script src="/js/bootstrap.js "></script>
   <script src="/js/main.js"></script>
   <!-- Fim Scripts -->

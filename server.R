@@ -25,6 +25,11 @@
         return("Você deve selecionar um arquivo")
       else return(NULL)
     })
+    output$msg2 <- renderText({
+      if(is.null(csv()))
+        return("Você deve selecionar um arquivo na Pagina de Upload")
+      else return(NULL)
+    })
     output$graph1 <- renderPlot({
       
     })

@@ -1,8 +1,8 @@
 
 $("#file1").fileinput({
     language: "pt-BR",
-    showUpload: false,
     showRemove: false,
+    showUpload: false,
     mainClass: "input-group-sm"
 });
 $(document).scroll(

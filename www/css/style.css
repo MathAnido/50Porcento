@@ -1,5 +1,6 @@
 ﻿body {
     padding-top: 70px;
+    padding-bottom: 40px;
     position: relative;
 }
 /* Set padding to keep content from hitting the edges */
@@ -54,5 +55,4 @@ a {
 a:hover,
 a:focus {
   color: #23527c;
-  text-decoration: underline;
 }
