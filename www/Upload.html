@@ -5,11 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>50% - Upload</title>
-  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css" />
-  <link rel="stylesheet" type="text/css" href="/css/fileinput.min.css" />
-  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/fileinput.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link rel="stylesheet" type="text/css" href="shared/shiny.css" />
+  <!-- Fim CSS -->
+  <!-- Scripts -->
+  <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script>
+  <script src="shared/jquery.js" type="text/javascript"></script>
+  <script src="shared/shiny.js" type="text/javascript"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/fileinput.min.js" type="text/javascript"></script>
+  <script src="js/locales/pt-BR.js" type="text/javascript"></script>
+  <script src="js/main.js" type="text/javascript"></script>
+  <!-- Fim Scripts -->
 </head>
 
 <body>
@@ -54,8 +65,7 @@
     </div>
     <div class="well">
       <label for="file1"> .CSV </label>
-      <input type="file" id="file1" class="file" data-allowed-file-extensions='["csv"]' accept=".csv" data-show-preview="false"
-      />
+      <input type="file" id="file1" class="file" data-allowed-file-extensions='["csv"]' accept=".csv" data-show-preview="false"/>
       <hr />
       <div class="checkbox">
         <label>
@@ -120,7 +130,7 @@
     </div>
     <div class="well">
       <div id="msg" class="shiny-text-output"></div>
-      <div id="preVisu" class="shiny-datatable-output"></div>
+      <div id="preVisu" class="shiny-html-output"></div>
     </div>
   </div>
   <!-- Fim Conteudo -->
@@ -132,14 +142,6 @@
   </div>
   <div class="rodape">Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2016 by 50Porcento. All rights reserved</div>
   <!-- Fim Rodape -->
-  <!-- Scripts -->
-  <script src="/js/jquery-2.2.4.min.js" type="text/javascript"></script>
-  <script src="shared/shiny.js" type="text/javascript"></script>
-  <script src="/js/bootstrap.min.js " type="text/javascript"></script>
-  <script src="/js/fileinput.min.js " type="text/javascript"></script>
-  <script src="/js/locales/pt-BR.js " type="text/javascript"></script>
-  <script src="/js/main.js" type="text/javascript"></script>
-  <!-- Fim Scripts -->
 </body>
 
 </html>
