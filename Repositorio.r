@@ -25,5 +25,23 @@ for(i in 1:dim(names(tabela))){
     x = c(i);
 }
 
+# LEMBRAR DE VERIFICAR SE A VARIÁVEL É QUALITATIVA OU QUANTITATIVA 
+# se qualitatitativa:
 
-       
+#pegar os valores da tabela e calcular estatistica descritiva ----- onde K é um valor selecionado a partir de uma "caixinha de escolha"
+mean(csv()[K]) # média
+var(csv()[K])    # variância
+sd(csv()[K])     # desvio-padrão
+summary(csv()[K])   #descreve os valores mínimo e máximo, média e mediana, primeiro e terceiro quartil
+#mostra as relações entre duas variáveis:
+correlação linear
+
+# se quantitativa:
+# quantidade de pessoas que tem a característica (a,b,c,d...)
+# mostra as relações entre duas variáveis:
+teste chi-quadrado
+
+
+
+# se quantitativa:
+
