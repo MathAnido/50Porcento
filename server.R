@@ -6,10 +6,16 @@ shinyServer(function(input, output, session) {
     if (is.null(inFile))
       return(NULL)
     read.csv(inFile$datapath,header = input$header,sep = input$sep,quote = input$quote)
+      
   })
+  
   opt <- reactive({
     if (is.null(csv()))
       return(NULL)
+      y <- dim(names(csv()))  
+    for(i in 1:y){
+      x<-c(i)
+    }
     names(csv())
   })
   output$preVisu <- renderTable({
@@ -21,13 +27,12 @@ shinyServer(function(input, output, session) {
   output$msg <- renderText({
     if (is.null(csv()))
       return("Você deve selecionar um arquivo")
+    return(dim(names(csv())))
   })
+  
   output$msg2 <- renderText({
     if (is.null(csv()))
       return("Você deve selecionar um arquivo na Pagina de Upload")
   })
-  observe({
-    updateSelectInput(session, "selecao", choices = opt())
-    updateSelectInput(session, "selecao2", choices = opt())
-  })
+  
 })
