@@ -69,7 +69,8 @@
       </div>
       <div class="well">
         <label for="file1"> .CSV </label>
-        <input type="file" id="file1" class="file" data-allowed-file-extensions='["csv"]' accept=".csv" data-show-preview="false" />
+        <input type="file" id="file1" class="file" data-allowed-file-extensions='["csv"]' accept=".csv" data-show-preview="false"
+        />
         <hr />
         <div class="checkbox ">
           <label>
@@ -89,13 +90,13 @@
             </div>
             <div class="radio">
               <label>
-              <input type="radio" name="sep " value=";" />
+              <input type="radio" name="sep" value=";" />
               <span>Ponto e Virgula</span>
             </label>
             </div>
             <div class="radio">
               <label>
-              <input type="radio" name="sep " value=" " />
+              <input type="radio" name="sep" value=" " />
               <span>Tab</span>
             </label>
             </div>
@@ -133,14 +134,30 @@
         <hr />
       </div>
       <div class="well">
-        <div id="msg" class="shiny-text-output">
-        </div>
+        <label for="file1">
+          <div id="msg" class="shiny-text-output">
+          </div>
+        </label>
         <div id="preVisu" class="datatables html-widget html-widget-output shiny-datatable-output"></div>
       </div>
     </div>
     <div>
       <div class="title">
-        <h1><i class="fa fa-file-text" aria-hidden="true"></i> Gráfico 1 <small>Monte um gráfico</small></h1>
+        <h1><i class="fa fa-file-text" aria-hidden="true"></i> LOL <small>Medidas Resumo</small></h1>
+        <hr />
+      </div>
+      <div class="well form-inline">
+        <label for="sltResumo">Coluna X :</label>
+        <select id="sltResumo" class="form-control input-sm"></select>
+        <pre id="name1" class="shiny-text-output"> </pre>
+      </div>
+      <label for="file1">
+        <pre id="resumo1" class="shiny-text-output"></pre>
+      </label>
+    </div>
+    <div>
+      <div class="title">
+        <h1><i class="fa fa-file-text" aria-hidden="true"></i> Gráfico <small>Monte um gráfico</small></h1>
         <hr />
       </div>
       <div class="well form-inline">
@@ -150,6 +167,18 @@
         <select id="selecao2" class="form-control input-sm"></select>
       </div>
       <div id="graph1" class="shiny-plot-output" style="width: 100%; height: 400px">
+      </div>
+    </div>
+    <div>
+      <div class="title">
+        <h1><i class="fa fa-file-text" aria-hidden="true"></i> Histograma <small>Monte um histograma</small></h1>
+        <hr />
+      </div>
+      <div class="well form-inline">
+        <label for="selecao4">Coluna X :</label>
+        <select id="selecao4" class="form-control input-sm"></select>
+      </div>
+      <div id="hist1" class="shiny-plot-output" style="width: 100%; height: 400px">
       </div>
     </div>
   </div>
