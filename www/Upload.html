@@ -11,11 +11,14 @@
   <link rel="stylesheet" type="text/css" href="css/fileinput.min.css" />
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link rel="stylesheet" type="text/css" href="shared/shiny.css" />
+  <link rel="stylesheet" type="text/css" href="shared/datatables/css/dataTables.bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="shared/datatables/css/dataTables.extra.css" />
   <!-- Fim CSS -->
   <!-- Scripts -->
   <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script>
-  <script src="shared/jquery.js" type="text/javascript"></script>
   <script src="shared/shiny.js" type="text/javascript"></script>
+  <script src="shared/datatables/js/jquery.dataTables.min.js"></script>
+  <script src="shared/datatables/js/dataTables.bootstrap.js"></script>
   <script src="js/bootstrap.min.js" type="text/javascript"></script>
   <script src="js/fileinput.min.js" type="text/javascript"></script>
   <script src="js/locales/pt-BR.js" type="text/javascript"></script>
@@ -59,82 +62,107 @@
   <!-- Fim Navbar -->
   <!-- Começo conteudo -->
   <div class="container">
-    <div class="title">
-      <h1><i class="fa fa-upload" aria-hidden="truen"></i> Upload <small>Insira o CSV</small></h1>
-      <hr />
-    </div>
-    <div class="well">
-      <label for="file1"> .CSV </label>
-      <input type="file" id="file1" class="file" data-allowed-file-extensions='["csv"]' accept=".csv" data-show-preview="false"/>
-      <hr />
-      <div class="checkbox">
-        <label>
+    <div>
+      <div class="title ">
+        <h1><i class="fa fa-upload " aria-hidden="truen "></i> Upload <small>Insira o CSV</small></h1>
+        <hr />
+      </div>
+      <div class="well">
+        <label for="file1"> .CSV </label>
+        <input type="file" id="file1" class="file" data-allowed-file-extensions='["csv"]' accept=".csv" data-show-preview="false" />
+        <hr />
+        <div class="checkbox ">
+          <label>
         <input id="header" type="checkbox" checked="checked" />
         <span>Cabeçalho</span>
       </label>
-      </div>
-      <hr />
-      <div id="sep" class="form-group shiny-input-radiogroup shiny-input-container shiny-bound-input">
-        <label class="control-label" for="sep">Separador</label>
-        <div class="shiny-options-group">
-          <div class="radio">
-            <label>
+        </div>
+        <hr />
+        <div id="sep" class="form-group shiny-input-radiogroup shiny-input-container shiny-bound-input ">
+          <label class="control-label" for="sep">Separador</label>
+          <div class="shiny-options-group ">
+            <div class="radio">
+              <label>
               <input type="radio" name="sep" value="," checked="checked" />
               <span>Virgula</span>
             </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="sep" value=";" />
+            </div>
+            <div class="radio">
+              <label>
+              <input type="radio" name="sep " value=";" />
               <span>Ponto e Virgula</span>
             </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="sep" value="	" />
+            </div>
+            <div class="radio">
+              <label>
+              <input type="radio" name="sep " value=" " />
               <span>Tab</span>
             </label>
+            </div>
           </div>
         </div>
-      </div>
-      <hr />
-      <div id="quote" class="form-group shiny-input-radiogroup shiny-input-container shiny-bound-input">
-        <label class="control-label" for="quote">Quote</label>
-        <div class="shiny-options-group">
-          <div class="radio">
-            <label>
-              <input type="radio" name="quote" value="" />
+        <hr />
+        <div id="quote" class="form-group shiny-input-radiogroup shiny-input-container shiny-bound-input">
+          <label class="control-label" for="quote">Quote</label>
+          <div class="shiny-options-group">
+            <div class="radio">
+              <label>
+              <input type="radio" name="quote" value=" " />
               <span>Nenhum</span>
             </label>
-          </div>
-          <div class="radio">
-            <label>
+            </div>
+            <div class="radio">
+              <label>
               <input type="radio" name="quote" value="&quot;" checked="checked" />
                 <span>Aspas Duplas</span>
             </label>
-          </div>
-          <div class="radio">
-            <label>
+            </div>
+            <div class="radio">
+              <label>
               <input type="radio" name="quote" value="'" />
               <span>Aspas Simples</span>
             </label>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="container">
-    <div class="title">
-      <h1><i class="fa fa-file-text" aria-hidden="truen"></i> CSV <small>Pré Visualização</small></h1>
-      <hr />
+    <div>
+      <div class="title">
+        <h1><i class="fa fa-file-text" aria-hidden="true"></i> CSV <small>Pré Visualização</small></h1>
+        <hr />
+      </div>
+      <div class="well">
+        <div id="msg" class="shiny-text-output">
+        </div>
+        <div id="preVisu" class="datatables html-widget html-widget-output shiny-datatable-output"></div>
+      </div>
     </div>
-    <div class="well">
-      <div id="msg" class="shiny-text-output"></div>
-      <div id="preVisu" class="shiny-html-output"></div>
+    <div>
+      <div class="title">
+        <h1><i class="fa fa-file-text" aria-hidden="true"></i> Gráfico 1 <small>Monte um gráfico</small></h1>
+        <hr />
+      </div>
+      <div class="well form-inline">
+        <label for="selecao">Coluna X :</label>
+        <select id="selecao" class="form-control input-sm"></select>
+        <label for="selecao2">Coluna Y :</label>
+        <select id="selecao2" class="form-control input-sm"></select>
+      </div>
+      <div id="graph1" class="shiny-plot-output" style="width: 100%; height: 400px">
+      </div>
     </div>
   </div>
   <!-- Fim Conteudo -->
   <!-- Inicio Rodape -->
+  <script>    
+    $("#file1").fileinput({
+      language: "pt-BR",
+      showRemove: false,
+      showUpload: false,
+      mainClass: "input-group-sm"
+    });
+    </script>
   <div class="navbar navbar-fixed-bottom">
     <a href="# " class="btn btn-default pull-right btnSubir invisible" id="btnUp">
       <span class="fa fa-chevron-up" aria-hidden="true "></span> Voltar ao Topo

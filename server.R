@@ -12,7 +12,13 @@ shinyServer(function(input, output, session) {
       return(NULL)
     names(csv())
   })
-  output$preVisu <- renderTable({
+  select1 <- reactive({
+    input$selecao
+  })
+  select2 <- reactive({
+    input$selecao2
+  })
+  output$preVisu <- renderDataTable({
     if (is.null(csv()))
       return(NULL)
     else
@@ -20,14 +26,19 @@ shinyServer(function(input, output, session) {
   })
   output$msg <- renderText({
     if (is.null(csv()))
-      return("Você deve selecionar um arquivo")
+      "Você deve selecionar um arquivo"
   })
   output$msg2 <- renderText({
     if (is.null(csv()))
-      return("Você deve selecionar um arquivo na Pagina de Upload")
+      "Você deve selecionar um arquivo na Pagina de Upload"
+  })
+  output$graph1 <- renderPlot({
+    if(is.null(csv()))
+      return(NULL)
+    else plot(csv()[[as.numeric(select1())]],csv()[[as.numeric(select2())]],xlab = opt()[[as.numeric(select1())]],ylab =  opt()[[as.numeric(select2())]])
   })
   observe({
-    updateSelectInput(session, "selecao", choices = opt())
-    updateSelectInput(session, "selecao2", choices = opt())
+    updateSelectInput(session, "selecao", choices = c(1,2,3,4,5,6,7,8))
+    updateSelectInput(session, "selecao2", choices = c(1,2,3,4,5,6,7,8))
   })
 })
