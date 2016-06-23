@@ -47,7 +47,7 @@
             <a href="#"><i class="fa fa-upload" aria-hidden="true"></i> Upload</a>
           </li>
           <li>
-            <a href="Graphs.html"><i class="fa fa-bar-chart" aria-hidden="true"></i> Graphs</a>
+            <a href="Conceitos.html"><i class="fa fa-book" aria-hidden="true"></i> Conceitos</a>
           </li>
           <li>
             <a href="Contato.html"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contato</a>
@@ -138,7 +138,7 @@
           <div id="msg" class="shiny-text-output">
           </div>
         </label>
-        <div id="preVisu" class="datatables html-widget html-widget-output shiny-datatable-output"></div>
+        <div id="preVisu" class="shiny-datatable-output"></div>
       </div>
     </div>
     <div>
@@ -149,15 +149,17 @@
       <div class="well form-inline">
         <label for="sltResumo">Coluna X :</label>
         <select id="sltResumo" class="form-control input-sm"></select>
-        <pre id="name1" class="shiny-text-output"> </pre>
+        <div id="name1" class="shiny-text-output"> </div>
       </div>
       <label for="file1">
         <pre id="resumo1" class="shiny-text-output"></pre>
+        Variância :
+        <pre id="resumo2" class="shiny-text-output"></pre>
       </label>
     </div>
     <div>
       <div class="title">
-        <h1><i class="fa fa-file-text" aria-hidden="true"></i> Gráfico <small>Monte um gráfico</small></h1>
+        <h1><i class="fa fa-file-text" aria-hidden="true"></i> Gráfico </h1>
         <hr />
       </div>
       <div class="well form-inline">
@@ -171,19 +173,28 @@
     </div>
     <div>
       <div class="title">
-        <h1><i class="fa fa-file-text" aria-hidden="true"></i> Histograma <small>Monte um histograma</small></h1>
+        <h1><i class="fa fa-file-text" aria-hidden="true"></i> Histograma </h1>
         <hr />
       </div>
-    
+
       <div class="well form-inline">
         <label for="selecao4">Coluna X :</label>
         <select id="selecao4" class="form-control input-sm"></select>
       </div>
-    <a href="javascript:window.print()" class="btn btn-success"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Download PDF</a>
       <div id="hist1" class="shiny-plot-output" style="width: 100%; height: 400px">
       </div>
     </div>
-    
+    <div>
+      <div class="title">
+        <h1><i class="fa fa-file-text" aria-hidden="true"></i> PDF </h1>
+        <hr />
+      </div>
+      <div class="well">
+      <a href="javascript:window.print()" class="btn btn-success"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Download PDF</a>
+      </div>
+      <br />
+      <hr />      
+    </div>
   </div>
   <!-- Fim Conteudo -->
   <!-- Inicio Rodape -->
