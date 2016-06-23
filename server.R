@@ -7,6 +7,7 @@ shinyServer(function(input, output, session) {
       return(NULL)
     read.csv(inFile$datapath,header = input$header,sep = input$sep,quote = input$quote)
   })
+  
   opt <- reactive({
     if (is.null(csv()))
       return(NULL)
@@ -28,6 +29,7 @@ shinyServer(function(input, output, session) {
     if (is.null(csv()))
       "Você deve selecionar um arquivo"
   })
+  
   output$msg2 <- renderText({
     if (is.null(csv()))
       "Você deve selecionar um arquivo na Pagina de Upload"
